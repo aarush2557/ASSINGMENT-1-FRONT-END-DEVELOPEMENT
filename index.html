@@ -1,57 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Event Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <h1>🎯 Smart Event Dashboard</h1>
+    <div class="page">
+        <header class="page-header">
+            <div class="title-wrap">
+                <span class="title-icon" aria-hidden="true">🎯</span>
+                <h1>Smart Event Dashboard</h1>
+            </div>
+            <p class="subtitle">Plan, track, and showcase events with a clean, modern hub.</p>
+        </header>
 
-    <!-- Add Event Form -->
-    <h2>Add New Event</h2>
-    <form id="eventForm">
-        <label>Event Title:<input type="text" id="eventTitle" required></label>
-        <br><br>
-        <label>Event Date:<input type="date" id="eventDate" required></label>
-        <br><br>
-        <label>
-            Category:
-            <select id="eventCategory" required>
-                <option value="Conference">Conference</option>
-                <option value="Workshop">Workshop</option>
-                <option value="Meetup">Meetup</option>
-                <option value="Webinar">Webinar</option>
-                <option value="Social">Social</option>
-            </select>
-        </label>
-        <br><br>
-        <label>
-            Description:
-            <textarea id="eventDescription" required></textarea>
-        </label>
-        <br><br>
-        <button type="submit">Add Event</button>
-    </form>
+        <main class="grid">
+            <section class="card add-card">
+                <h2>Add New Event</h2>
+                <form id="event-form">
+                    <label class="field">
+                        <span>Event Title:</span>
+                        <input type="text" id="title" placeholder="Enter title" required />
+                    </label>
 
-    <hr>
-    <!-- Events Section -->
-    <h2>My Events</h2>
+                    <label class="field">
+                        <span>Event Date:</span>
+                        <input type="date" id="date" required />
+                    </label>
 
-    <button id="clearAllBtn">Clear All Events</button>
-    <button id="addSampleBtn">Add Sample Events</button>
+                    <label class="field">
+                        <span>Category:</span>
+                        <select id="category">
+                            <option>Conference</option>
+                            <option>Workshop</option>
+                            <option>Meetup</option>
+                            <option>Webinar</option>
+                        </select>
+                    </label>
 
-    <div id="eventContainer">
-        <div class="empty-state">No events yet. Add your first event!</div>
+                    <label class="field">
+                        <span>Description:</span>
+                        <textarea id="description" rows="4" placeholder="Optional"></textarea>
+                    </label>
+
+                    <button class="btn primary" type="submit">Add Event</button>
+                </form>
+            </section>
+
+            <section class="card events-card">
+                <div class="events-header">
+                    <h2>My Events</h2>
+                    <div class="actions">
+                        <button class="btn ghost" id="clear-btn">Clear All Events</button>
+                        <button class="btn primary" id="sample-btn">Add Sample Events</button>
+                    </div>
+                </div>
+                <div class="events-list" id="events-list">
+                    <div class="empty">No events yet. Aarush add your first event!</div>
+                </div>
+            </section>
+
+            <section class="card demo-card">
+                <h2>DOM Manipulation Demo</h2>
+                <div class="demo-row">
+                    <div class="demo-label">You Pressed:</div>
+                    <div class="demo-value" id="key-output">-</div>
+                </div>
+            </section>
+        </main>
     </div>
-    <hr>
-    <!-- DOM Demo -->
-    <h2>DOM Manipulation Demo</h2>
 
-    <div id="demoContent">
-        Press any key to see the difference!
-    </div>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
